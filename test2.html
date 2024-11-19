@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Popup Example</title>
+  <style>
+    /* Popup Background */
+    .popup {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      z-index: 1000;
+      overflow: auto;
+    }
+
+    /* Popup Content */
+    .popup-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%; /* Adjust for mobile */
+      max-width: 500px; /* Cap for desktop */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      .popup-content {
+        margin: 20% auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Popup Example</h1>
+  <p>Click on any of the links below to see the popup:</p>
+  <ul>
+    <li><a href="#" class="popup-link" data-content="This is the content for Link 1.">Link 1</a></li>
+    <li><a href="#" class="popup-link" data-content="This is the content for Link 2.">Link 2</a></li>
+    <li><a href="#" class="popup-link" data-content="This is the content for Link 3.">Link 3</a></li>
+    <li><a href="#" class="popup-link" data-content="This is the content for Link 4.">Link 4</a></li>
+  </ul>
+
+  <!-- Popup Container -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="closePopupBtn">&times;</span>
+      <h2>Popup</h2>
+      <p id="popupText">Popup content will appear here.</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle popup visibility and dynamic content
+    const popup = document.getElementById('popup');
+    const popupText = document.getElementById('popupText');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    const popupLinks = document.querySelectorAll('.popup-link');
+
+    popupLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const content = link.getAttribute('data-content');
+        popupText.textContent = content;
+        popup.style.display = 'block';
+      });
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // Close popup if user clicks outside of it
+    window.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

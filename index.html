@@ -26,7 +26,53 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">  
+        
+        <style>
+    /* Popup Background */
+    .popup {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      z-index: 1000;
+      overflow: auto;
+    }
+
+    /* Popup Content */
+    .popup-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%; /* Adjust for mobile */
+      max-width: 500px; /* Cap for desktop */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      .popup-content {
+        margin: 20% auto;
+      }
+    }
+  </style>
     </head>
 
     <body>
@@ -787,20 +833,158 @@
         
         <!-- Copyright Start -->
         <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-white">First Floor, M-63 , Greater Kailash II, New Delhi 110048</a></span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-body">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/ -->
-                       info@shibuya.co.in | Tel. +91-9910475615 / 011-40366262
-                    </div>
-                </div>
+            <div class="container"> 
+       <a href="#" class="popup-link" data-content="<p><strong>Location</strong><br>
+First Floor, M-63 , Greater Kailash II, New Delhi 110048 <br><br>
+<strong>Contact</strong>
+<br>info@shibuya.co.in | Tel. +91-9910475615 / 011-40366262
+</p>">Contact</a> |
+    
+    
+      <a href="#" class="popup-link" data-content="<h1>Terms and Conditions</h1>
+
+    <h2>Introduction</h2>
+    <p>Welcome to Shibuya Food & Bar. By using our services and payment gateway, you agree to the following terms and conditions. Please read them carefully.</p>
+
+    <h2>Payment Gateway</h2>
+    <p>We use <strong>Razorpay</strong> as our payment gateway service to securely process online payments. By making a payment on our platform, you agree to the terms and conditions of Razorpay as well, which are outlined in Razorpay’s <strong>Terms of Service</strong>.</p>
+
+    <h2>Payments</h2>
+    <ul>
+        <li>All payments are processed through <strong>Razorpay’s secure payment gateway</strong>.</li>
+        <li>You are responsible for providing accurate payment details.</li>
+        <li>We do not store or have access to your sensitive payment information such as credit/debit card details.</li>
+        <li>If the payment fails for any reason, please check with your bank or Razorpay support for assistance.</li>
+    </ul>
+
+    <h2>Refund Policy</h2>
+    <p>Refunds are subject to our refund policy and <strong>Razorpay’s refund terms</strong>. If you are entitled to a refund, please contact us within 7 days of your transaction, and we will assist you in initiating the refund process with Razorpay.</p>
+
+    <h2>Security</h2>
+    <p><strong>Razorpay</strong> uses industry-standard security measures to protect your personal and financial information. However, we advise you to take necessary precautions when making online transactions.</p>
+
+    <h2>Changes to Terms</h2>
+    <p>We may update our terms and conditions from time to time. Any changes will be posted on this page with the updated date. Continued use of our services means you accept the updated terms.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about these terms or the payment process, please contact us at  info@shibuya.co.in or call +91-9910475615 / 011-40366262</p>">
+      
+      Terms & Conditions</a> |
+    
+    
+      <a href="#" class="popup-link" data-content="<header>
+        <h1>Privacy Policy</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Welcome to our restaurant. We respect your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and protect your data when you use our services, including payments via Razorpay.</p>
+    </section>
+
+    <section>
+        <h2>Information We Collect</h2>
+        <p>We collect the following information to process your payments and provide a better customer experience:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, and billing details.</li>
+            <li><strong>Payment Information:</strong> Razorpay processes all payment transactions. We do not store your card details. All transactions are encrypted for your security.</li>
+            <li><strong>Usage Data:</strong> Information about how you interact with our website or services, such as browsing activities.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How We Use Your Information</h2>
+        <p>Your information is used for the following purposes:</p>
+        <ul>
+            <li>To process payments and fulfill orders placed at our restaurant.</li>
+            <li>To send order confirmations, receipts, and any related notifications.</li>
+            <li>To improve our services and provide better customer experiences.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Data Security</h2>
+        <p>We implement industry-standard security measures to protect your personal and payment information. Razorpay handles all payment data securely through their platform, ensuring compliance with relevant data protection regulations.</p>
+    </section>
+
+    <section>
+        <h2>Third-Party Services</h2>
+        <p>We use Razorpay as our payment gateway provider. Razorpay is responsible for securely processing your payment information. By using our payment services, you agree to the privacy practices of Razorpay, which can be found on their website.</p>
+    </section>
+
+    <section>
+        <h2>Your Rights</h2>
+        <p>You have the right to access, correct, or delete your personal data. If you have any concerns or questions regarding your data, please contact us directly.</p>
+    </section>
+
+    <section>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the date of the last update will be indicated at the bottom.</p>
+    </section>
+
+    <footer>
+        <p>Last updated: <strong>November 2024</strong></p>
+    </footer>">
+      Privacy</a> |
+    
+    
+      <a href="#" class="popup-link" data-content="<header>
+        <h1>Refund & Cancellations Policy</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Thank you for choosing our restaurant. We want you to have the best experience with us. Please review our refund and cancellations policy carefully before placing your order.</p>
+    </section>
+
+    <section>
+        <h2>Order Cancellations</h2>
+        <p>We understand that plans can change, and you may need to cancel your order. Our cancellation policy is as follows:</p>
+        <ul>
+            <li>Orders can be canceled free of charge within <strong>30 minutes</strong> of placing the order.</li>
+            <li>To cancel an order, please contact us via phone or email as soon as possible. If the order has already been processed or dispatched, cancellation may not be possible.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Refunds</h2>
+        <p>If you have received an incorrect or damaged order, we will happily offer a refund. Our refund policy includes:</p>
+        <ul>
+            <li><strong>Incorrect or Damaged Orders:</strong> If there is an issue with your order, please contact us within <strong>2 hours</strong> of receiving your meal. We will review the situation and offer a refund if appropriate.</li>
+            <li><strong>Refund Process:</strong> If eligible for a refund, the amount will be credited back to the original payment method, typically within <strong>7-10 business days</strong>, depending on the payment processor.</li>
+            <li><strong>No Refunds:</strong> Refunds are not provided for change of mind or if the order was delivered as requested.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How to Request a Cancellation or Refund</h2>
+        <p>If you need to cancel your order or request a refund, please follow these steps:</p>
+        <ul>
+            <li>Contact our customer support team by phone or email with your order details.</li>
+            <li>Provide a reason for the cancellation or refund request.</li>
+            <li>Our team will respond to your request as soon as possible.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Refund and Cancellations Policy from time to time. Any changes will be posted on this page, and the date of the last update will be indicated at the bottom.</p>
+    </section>
+
+    <footer>
+        <p>Last updated: <strong>November 2024</strong></p>
+    </footer>">
+      Refund & Cancellations</a> |
+      
+               
             </div>
         </div>
+        </div>
+        <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="closePopupBtn">&times;</span>
+      <div id="popupText">Popup content will appear here.</div>
+    </div>
+  </div>
         <!-- Copyright End -->
                              
    
@@ -821,7 +1005,37 @@
     
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> 
+    
+    <script>
+    // JavaScript to handle popup visibility and dynamic content
+    const popup = document.getElementById('popup');
+    const popupText = document.getElementById('popupText');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    const popupLinks = document.querySelectorAll('.popup-link');
+
+    // Event listeners for each link
+    popupLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        const content = link.getAttribute('data-content'); // Get content from data-content attribute
+        popupText.innerHTML = content; // Set the HTML content inside the popup
+        popup.style.display = 'block'; // Show the popup
+      });
+    });
+
+    // Close popup on clicking close button
+    closePopupBtn.addEventListener('click', () => {
+      popup.style.display = 'none'; // Hide the popup
+    });
+
+    // Close popup if user clicks outside the popup content
+    window.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        popup.style.display = 'none'; // Hide the popup
+      }
+    });
+  </script>
     </body>
 
 </html>
